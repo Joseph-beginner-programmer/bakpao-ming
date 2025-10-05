@@ -1,11 +1,35 @@
-<h1>Your Cart</h1>
+<section id="cart" class="py-16 mt-20 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold font-serif mb-12 text-gray-800 text-center">
+      Your Cart
+    </h2>
 
-<ul>
-  <% if (cart.length > 0) { %>
-    <% cart.forEach(item => { %>
-      <li><%= item.id %> (Qty: <%= item.qty %>)</li>
-    <% }) %>
-  <% } else { %>
-    <li>Cart is empty</li>
-  <% } %>
-</ul>
+    <% if (cart.length === 0) { %>
+      <p class="text-center text-gray-600">Your cart is empty.</p>
+    <% } else { %>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b">
+            <th class="py-2">Item</th>
+            <th class="py-2">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% cart.forEach(item => { %>
+            <tr class="border-b">
+              <td class="py-2"><%= item.name %></td>
+              <td class="py-2">Rp <%= item.price.toLocaleString('id-ID') %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <div class="mt-8 text-center">
+        <a href="/checkout"
+          class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
+          Checkout via WhatsApp
+        </a>
+      </div>
+    <% } %>
+  </div>
+</section>
