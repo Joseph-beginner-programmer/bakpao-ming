@@ -1,0 +1,37 @@
+<!-- Hero Section -->
+<div class="relative w-full h-screen overflow-hidden">
+  <img src="img/background-mie.jpeg" alt="Background" class="w-full h-full object-cover">
+  <div class="absolute inset-0 bg-black bg-black/30"></div>
+
+  <!-- Content with background box -->
+  <div class="absolute inset-0 flex items-center justify-center text-center px-4 pt-10">
+    <div class=" rounded-2xl p-8 text-white max-w-2xl">
+      <div class="bg-black/40 rounded-xl p-10">
+        <h1 class="text-5xl sm:text-6xl font-serif text-white mb-6">
+          Good taste with special recipe
+        </h1>
+        <p class="text-lg sm:text-2xl mb-10 font-serif">
+        Fresh daily. Traditional recipes. Delivered to your doorstep.
+      </p>
+      <a href="#order-online"
+        class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-full text-xl font-serif">
+        Order Now
+      </a>
+      </div>
+
+
+      
+      
+    </div>
+  </div>
+</div>
+<a href="https://wa.me/62811309198" target="_blank"
+   class="fixed bottom-4 left-0  z-10">
+  <img src="img/whatsapp.png" alt="WhatsApp" class="w-24 h-10">
+</a>
+
+<!-- Order Online Section (partial include) -->
+<%- include('sections/orderOnline') %>
+  <%- include('sections/menu') %>
+    <%- include('sections/location') %>
+      <%- include('sections/about') %>

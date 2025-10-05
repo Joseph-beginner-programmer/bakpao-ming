@@ -1,0 +1,11 @@
+<h1>Your Cart</h1>
+
+<ul>
+  <% if (cart.length > 0) { %>
+    <% cart.forEach(item => { %>
+      <li><%= item.id %> (Qty: <%= item.qty %>)</li>
+    <% }) %>
+  <% } else { %>
+    <li>Cart is empty</li>
+  <% } %>
+</ul>

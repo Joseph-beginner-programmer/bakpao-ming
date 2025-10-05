@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Font: Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Playfair Display', 'sans-serif'],   // replace default
+                        heading: ['Playfair Display', 'sans-serif'] // custom heading font
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black shadow-md">
+        <div class="w-full px-6">
+            <div class="flex justify-center items-center py-1">
+                <ul class="flex items-center space-x-8 text-white font-medium">
+
+                    <!-- Left links -->
+                    <li><a href="#order-online" class="hover:text-yellow-400 font-bold text-xl font-serif">Order
+                            Online</a></li>
+                    <li><a href="#menu" class="hover:text-yellow-400 font-bold text-xl font-serif">Menu</a></li>
+
+                    <!-- Center Logo -->
+                    <li>
+                        <img src="img/logo-putih.png" alt="Logo" class="h-24 w-auto mx-4">
+                    </li>
+
+                    <!-- Right links -->
+                    <li><a href="#about" class="hover:text-yellow-400 font-bold text-xl font-serif">About Us</a></li>
+                    <li><a href="#location" class="hover:text-yellow-400 font-bold text-xl font-serif">Location</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <%- body %>
+</body>
+
+</html>
