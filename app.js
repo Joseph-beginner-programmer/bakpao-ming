@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/menu', (req, res) => {
-  res.render('pages/menu', {layout: 'menuLayout'});
+  res.render('pages/menu', { layout: 'menuLayout' });
 });
 
 app.post('/cart/add', (req, res) => {
@@ -45,7 +45,14 @@ app.post('/cart/add', (req, res) => {
   if (!item) return res.status(404).send('Item not found');
 
   if (!req.session.cart) req.session.cart = [];
-  req.session.cart.push(item);
+
+  const existing = req.session.cart.find(i => i.id === item.id);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    req.session.cart.push({ ...item, quantity: 1 });
+  }
+
 
   // ✅ Save a flash message
   req.session.flash = `✅ ${item.name} added to your cart!`;
@@ -57,7 +64,7 @@ app.post('/cart/add', (req, res) => {
 // Cart page
 app.get('/cart', (req, res) => {
   const cart = req.session.cart || [];
-  res.render('pages/cart', { title: 'Your Cart', cart, layout: 'menuLayout'});
+  res.render('pages/cart', { title: 'Your Cart', cart, layout: 'menuLayout' });
 });
 
 // WhatsApp checkout
@@ -77,6 +84,24 @@ app.get('/checkout', (req, res) => {
 
   res.redirect(whatsappURL);
 });
+
+app.post('/cart/update', (req, res) => {
+  const { id, quantity } = req.body;
+  if (!req.session.cart) return res.status(400).json({ error: 'Cart not found' });
+
+  const item = req.session.cart.find(i => i.id == id);
+  if (item) item.quantity = parseInt(quantity);
+  res.json({ success: true });
+});
+
+app.post('/cart/remove', (req, res) => {
+  const { id } = req.body;
+  if (!req.session.cart) return res.status(400).json({ error: 'Cart not found' });
+
+  req.session.cart = req.session.cart.filter(i => i.id != id);
+  res.json({ success: true });
+});
+
 
 // Start the server
 app.listen(3000, () => {

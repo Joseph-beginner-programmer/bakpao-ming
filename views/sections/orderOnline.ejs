@@ -1,9 +1,9 @@
 <!-- Order Online Section -->
-<section id="order" class="w-full bg-gray-100 py-32 h-screen">
+<section id="order" class="w-full bg-gray-100 py-32 min-h-screen">
   <div class="container mx-auto px-6 text-center">
     <h2 class="text-4xl font-bold mb-8 text-gray-800 font-serif">Order Online</h2>
     <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-12">
-      Freshly cooked chinese food delivered straight to your door. 
+      Freshly cooked Chinese food delivered straight to your door.
       Choose your favorites and enjoy authentic flavors at home.
     </p>
 
@@ -14,32 +14,41 @@
         <img src="img/bakpao.jpeg" alt="Steamed Bun" class="w-full h-48 object-cover rounded-xl mb-4">
         <h3 class="text-xl font-semibold mb-2">Steamed Bun</h3>
         <p class="text-gray-600 mb-4">Soft, juicy, and full of flavor.</p>
-        <button class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600">
+        <a href="/menu#dumplings" class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition">
           See More
-        </button>
+        </a>
       </div>
 
       <!-- Item 2 -->
       <div class="bg-white rounded-2xl shadow-lg p-6">
         <img src="img/main-dish.jpeg" alt="Main Dish" class="w-full h-48 object-cover rounded-xl mb-4">
         <h3 class="text-xl font-semibold mb-2">Main Dish</h3>
-        <p class="text-gray-600 mb-4">Rice and Noodle. Will fill you up</p>
-        <button class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600">
+        <p class="text-gray-600 mb-4">Rice and Noodle. Will fill you up.</p>
+        <a href="/menu#main-dishes"
+          class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition">
           See More
-        </button>
+        </a>
       </div>
 
       <!-- Item 3 -->
       <div class="bg-white rounded-2xl shadow-lg p-6">
         <img src="img/side-dish.jpeg" alt="Side Dish" class="w-full h-48 object-cover rounded-xl mb-4">
         <h3 class="text-xl font-semibold mb-2">Side Dish</h3>
-        <p class="text-gray-600 mb-4">Something extra to add more flavor</p>
-        <button class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600">
+        <p class="text-gray-600 mb-4">Something extra to add more flavor.</p>
+        <a href="/menu#side-dishes"
+          class="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 transition">
           See More
-        </button>
+        </a>
       </div>
 
-      
+    </div>
+
+    <!-- ✅ Browse Menu Button -->
+    <div class="mt-16">
+      <a href="/menu"
+        class="inline-block bg-red-600 text-white font-bold px-8 py-3 rounded-lg text-lg shadow-md hover:bg-green-700 transition duration-300 font-bold">
+        Browse Full Menu
+      </a>
     </div>
   </div>
 </section>

@@ -11,27 +11,29 @@
           Good taste with special recipe
         </h1>
         <p class="text-lg sm:text-2xl mb-10 font-serif">
-        Fresh daily. Traditional recipes. Delivered to your doorstep.
-      </p>
-      <a href="#order-online"
-        class="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-full text-xl font-serif">
-        Order Now
-      </a>
+          Fresh daily. Traditional recipes. Delivered to your doorstep.
+        </p>
+
+        <div class="max-w-xl">
+          <a href="#order-online"
+            class="bg-green-500 hover:bg-yellow-600 inline-flex flex items-center text-white font-semibold py-3 px-6 gap-4 rounded-full text-xl font-serif">
+            Order Now
+
+            <img src="img/whatsapp.png" alt="whatsapp_putih" class="w-8">
+          </a>
+        </div>
       </div>
 
 
-      
-      
+
+
     </div>
   </div>
 </div>
-<a href="https://wa.me/62811309198" target="_blank"
-   class="fixed bottom-4 left-0  z-10">
-  <img src="img/whatsapp.png" alt="WhatsApp" class="w-24 h-10">
-</a>
 
 <!-- Order Online Section (partial include) -->
 <%- include('sections/orderOnline') %>
-  <%- include('sections/menu') %>
-    <%- include('sections/location') %>
-      <%- include('sections/about') %>
+  <%- include('sections/location') %>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

@@ -33,17 +33,19 @@
                 <ul class="flex items-center space-x-8 text-white font-medium">
 
                     <!-- Left links -->
-                    <li><a href="#order-online" class="hover:text-yellow-400 font-bold text-xl font-serif">Order
-                            Online</a></li>
-                    <li><a href="#menu" class="hover:text-yellow-400 font-bold text-xl font-serif">Menu</a></li>
+                    <li><a href="#order-online" class="hover:text-yellow-400 font-bold text-xl font-serif">Menu
+                        </a></li>
+
 
                     <!-- Center Logo -->
                     <li>
-                        <img src="img/logo-putih.png" alt="Logo" class="h-24 w-auto mx-4">
+                        <a href="/">
+                            <img src="img/logo-putih.png" alt="Logo" class="h-24 w-auto mx-4">
+                        </a>
+
                     </li>
 
                     <!-- Right links -->
-                    <li><a href="#about" class="hover:text-yellow-400 font-bold text-xl font-serif">About Us</a></li>
                     <li><a href="#location" class="hover:text-yellow-400 font-bold text-xl font-serif">Location</a></li>
                 </ul>
             </div>
@@ -52,9 +54,43 @@
 
 
     <%- body %>
-        <a href="https://wa.me/62811309198" target="_blank" class="fixed bottom-4 left-0  z-10">
-            <img src="img/whatsapp.png" alt="WhatsApp" class="w-24 h-10">
-        </a>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        if (window.location.hash) {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+                setTimeout(() => {
+                    gsap.to(window, {
+                        duration: 1,
+                        scrollTo: { y: target, offsetY: 100 }, // offset for fixed navbar
+                        ease: "power2.out"
+                    });
+                }, 300); // wait for page render
+            }
+        }
+
+        // Smooth scroll for in-page anchor links too
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener("click", (e) => {
+                const hash = link.getAttribute("href");
+                const target = document.querySelector(hash);
+                if (target) {
+                    e.preventDefault();
+                    gsap.to(window, {
+                        duration: 1,
+                        scrollTo: { y: target, offsetY: 70 },
+                        ease: "power2.out"
+                    });
+                    history.pushState(null, null, hash);
+                }
+            });
+        });
+    });
+
+</script>
 
 </html>
