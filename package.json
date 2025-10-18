@@ -15,5 +15,13 @@
     "express": "^5.1.0",
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.18.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joseph-beginner-programmer/bakpao-ming.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Joseph-beginner-programmer/bakpao-ming/issues"
+  },
+  "homepage": "https://github.com/Joseph-beginner-programmer/bakpao-ming#readme"
 }

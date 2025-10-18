@@ -3,55 +3,39 @@
     <h2 class="text-4xl font-bold font-serif mb-12 text-gray-800 text-center">Our Menu</h2>
 
     <!-- Main Dishes -->
-    <%- include('../partials/menuSection', {
-      title: "Main Dishes",
-      items: [
-        {id: 1, name: "Special Noodles", description: "Authentic recipe with rich flavor.", price: "35.000", image: "img/main1.jpg" },
-        {id: 2, name: "Beef Rice Bowl", description: "Tender beef served with steamed rice.", price: "45.000", image: "img/main2.jpg" }
-      ]
-    }) %>
+    <div id="main-dishes">
+      <%- include('../partials/menuSection', {
+        title: "Main Dishes",
+        items: [
+          {id: 1, name: "Special Noodles", description: "Authentic recipe with rich flavor.", price: "35.000", image: "img/main1.jpg" },
+          {id: 2, name: "Beef Rice Bowl", description: "Tender beef served with steamed rice.", price: "45.000", image: "img/main2.jpg" }
+        ]
+      }) %>
+    </div>
 
     <!-- Side Dishes -->
-    <%- include('../partials/menuSection', {
-      title: "Side Dishes",
-      items: [
-        {id: 3, name: "Spring Rolls", description: "Crispy and delicious rolls.", price: "20.000", image: "img/side1.jpg" },
-        {id: 4, name: "Fried Tofu", description: "Golden fried tofu with dipping sauce.", price: "15.000", image: "img/side2.jpg" }
-      ]
-    }) %>
+    <div id="side-dishes">
+      <%- include('../partials/menuSection', {
+        title: "Side Dishes",
+        items: [
+          {id: 3, name: "Spring Rolls", description: "Crispy and delicious rolls.", price: "20.000", image: "img/side1.jpg" },
+          {id: 4, name: "Fried Tofu", description: "Golden fried tofu with dipping sauce.", price: "15.000", image: "img/side2.jpg" }
+        ]
+      }) %>
+    </div>
 
     <!-- Dumplings -->
-    <%- include('../partials/menuSection', {
-      title: "Dumplings",
-      items: [
-        {id: 5, name: "Steamed Dumplings", description: "Soft dumplings with savory filling.", price: "30.000", image: "img/dumpling1.jpg" },
-        {id: 6, name: "Fried Dumplings", description: "Crispy pan-fried dumplings.", price: "32.000", image: "img/dumpling2.jpg" }
-      ]
-    }) %>
+    <div id="dumplings">
+      <%- include('../partials/menuSection', {
+        title: "Dumplings",
+        items: [
+          {id: 5, name: "Steamed Dumplings", description: "Soft dumplings with savory filling.", price: "30.000", image: "img/dumpling1.jpg" },
+          {id: 6, name: "Fried Dumplings", description: "Crispy pan-fried dumplings.", price: "32.000", image: "img/dumpling2.jpg" }
+        ]
+      }) %>
+    </div>
   </div>
 </section>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".add-to-cart").forEach(button => {
-    button.addEventListener("click", async () => {
-      const productId = button.dataset.id;
 
-      try {
-        const response = await fetch("/cart/add", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ id: productId })
-        });
 
-        const data = await response.json();
-
-        // ✅ You can later update a cart icon or popup
-        alert(`${productId} added to cart! Cart now has ${data.cart.length} items.`);
-      } catch (err) {
-        console.error("Error adding to cart:", err);
-      }
-    });
-  });
-});
-</script>
